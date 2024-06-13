@@ -1,7 +1,7 @@
 .POSIX:
 .SUFFIXES:
 
-CXX = c++
+CXX = zig c++
 
 debug = no
 static = no
@@ -63,7 +63,7 @@ LDFLAGS-os-SunOS = -lsocket -rdynamic
 CPPFLAGS-os-Windows = -D_XOPEN_SOURCE=700
 LIBS-os-Windows = -ldbghelp
 
-CXXFLAGS-default = -std=c++2a -Wall -Wextra -pedantic -Wno-unused-parameter -Wno-sign-compare
+CXXFLAGS-default = -std=c++2a -Wall -Wextra -pedantic -Wno-unused-parameter -Wno-sign-compare --target=arm-linux-gnueabihf
 
 compiler = $(shell $(CXX) --version | grep -E -o 'clang|g\+\+|c\+\+' | head -1)
 compiler != $(CXX) --version | grep -E -o 'clang|g\+\+|c\+\+' | head -1
